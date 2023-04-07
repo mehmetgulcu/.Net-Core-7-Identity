@@ -1,0 +1,55 @@
+﻿@model UserCreateModel
+
+<form asp-action="Create" method="post" class="p-3 w-50 mx-auto shadow position-absolute top-50 start-50 translate-middle">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label>Kullanıcı Adı:</label>
+                <span class="text-danger" asp-validation-for="@Model.Username"></span>
+                <input asp-for="@Model.Username" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label>Email:</label>
+                <span class="text-danger" asp-validation-for="@Model.Email"></span>
+                <input asp-for="@Model.Email" class="form-control" type="email" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label>Şifre:</label>
+                <span class="text-danger" asp-validation-for="@Model.Password"></span>
+                <input asp-for="@Model.Password" class="form-control" type="password" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label>Şifre Tekrar:</label>
+                <span class="text-danger" asp-validation-for="@Model.ComfirmPassword"></span>
+                <input asp-for="@Model.ComfirmPassword" class="form-control" type="password" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10">
+            <div class="mb-3">
+                <label>Cinsiyet:</label>
+                <span class="text-danger" asp-validation-for="@Model.Gender"></span>
+                <input asp-for="@Model.Gender" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div>
+                <button type="submit" class="btn btn-outline-primary mt-4">Kayıt Ol</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+</form>

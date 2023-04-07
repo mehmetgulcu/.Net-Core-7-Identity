@@ -1,0 +1,45 @@
+﻿@model UserSignInModel
+
+<form asp-action="SignIn" asp-controller="Home" method="post" class="p-3 w-50 mx-auto shadow position-absolute top-50 start-50 translate-middle">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label>Kullanıcı Adı:</label>
+                <span class="text-danger" asp-validation-for="@Model.Username"></span>
+                <input asp-for="@Model.Username" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label>Şifre:</label>
+                <span class="text-danger" asp-validation-for="@Model.Password"></span>
+                <input asp-for="@Model.Password" class="form-control" type="password" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-check form-check-reverse">
+              <input class="form-check-input" type="checkbox" asp-for="@Model.RememberMe">
+              <label class="form-check-label" for="RememberMe">
+                Beni Hatırla
+              </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <button type="submit" class="btn btn-outline-primary mt-4">Giriş Yap</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+</form>
